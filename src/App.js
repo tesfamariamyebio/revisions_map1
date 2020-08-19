@@ -1,26 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import 'bootstrap/dist/css/bootstrap.min.css';
+class App extends React.Component{
+  constructor(props){
+  super(props);
+  this.state={
+    students:[],
+  }
 }
+  render(){
+    const students=['Evelyn','Glenn', 'Kourtney', 'Dawson', 'Maggie', 'Kyle'];
+    return (
+    <div>
+{students.map((student)=>{
+  console.log(student);
+  return(
+    <div>
+      <ul class="list-group col-2 offset-3">
+        <li class ="list-group-item text-center">{student}</li>
+      </ul>
+      
+    </div>
+  )
 
+})}
+    </div>
+    );
+  }
+}
 export default App;
+
